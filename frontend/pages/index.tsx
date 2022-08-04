@@ -6,6 +6,7 @@ import { AuthorDate } from "../components/AuthorDate/authordate.component";
 import { FeaturedPost } from "../components/FeaturedPost/featuredpost.component";
 import { Footer } from "../components/Footer/footer.component";
 import { Navbar } from "../components/Navbar/navbar.component";
+import { PostCard } from "../components/PostCard/postcard.component";
 
 const Home: NextPage = () => {
   return (
@@ -25,11 +26,39 @@ const Home: NextPage = () => {
             </div>
             <FeaturedPost
               title={"Useful tips and tricks in Python"}
+              description="Whether your new to Python or an experienced veteran, this article
+              will contain some tips and tricks for everyone..."
               image="/python.jpg"
               author="Daem Pasha"
               date={1659641781}
+
             />
           </div>
+        </div>
+
+        <div className="flex">
+          <PostCard 
+            title={"Useful tips and tricks in Python"}
+            description="Whether your new to Python or an experienced veteran, this article
+            will contain some tips and tricks for everyone..."
+            image="/python.jpg"
+            author="Daem Pasha"
+            date={1659641781} />
+                   <PostCard 
+            title={"Useful tips and tricks in Python"}
+            description="Whether your new to Python or an experienced veteran, this article
+            will contain some tips and tricks for everyone..."
+            image="/python.jpg"
+            author="Daem Pasha"
+            date={1659641781} />   
+                      <PostCard 
+            title={"Useful tips and tricks in Python"}
+            description="Whether your new to Python or an experienced veteran, this article
+            will contain some tips and tricks for everyone..."
+            image="/python.jpg"
+            author="Daem Pasha"
+            date={1659641781} />
+            
         </div>
       </main>
       <Footer />
