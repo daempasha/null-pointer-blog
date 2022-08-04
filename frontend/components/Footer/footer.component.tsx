@@ -17,19 +17,19 @@ export const Footer = () => (
       <span className="mt-2 font-mono">Null Pointer Blog</span>
 
       <div className="flex justify-center my-3">
-        <a href="https://www.linkedin.com/" className={SOCIAL_BUTTON_STYLE}>
+        <a href="#" className={SOCIAL_BUTTON_STYLE}>
           <FaLinkedinIn size={20} />
         </a>
 
-        <a href="https://www.linkedin.com/" className={SOCIAL_BUTTON_STYLE}>
+        <a href="#" className={SOCIAL_BUTTON_STYLE}>
           <FaFacebookF size={20} />
         </a>
 
-        <a href="https://www.linkedin.com/" className={SOCIAL_BUTTON_STYLE}>
+        <a href="#" className={SOCIAL_BUTTON_STYLE}>
           <FaTwitter size={20} />
         </a>
 
-        <a href="https://www.linkedin.com/" className={SOCIAL_BUTTON_STYLE}>
+        <a href="#" className={SOCIAL_BUTTON_STYLE}>
           <FaYoutube size={20} />
         </a>
       </div>
