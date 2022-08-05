@@ -20,9 +20,14 @@ export const FeaturedPost = ({
   width = "400px",
 }: iPost) => {
   return (
-    <div className="flex">
-      <Image className="rounded-md hover:opacity-60 hover:cursor-pointer transition-all" src={image} height={height} width={width} />
-      <div className="ml-32 max-w-prose">
+    <div className="flex flex-col md:flex-row">
+      <Image
+        className="rounded-md hover:opacity-60 hover:cursor-pointer transition-all "
+        src={image}
+        height={height}
+        width={width}
+      />
+      <div className="mt-2 md:mt-0 ml-0 md:ml-32 max-w-prose">
         <AuthorDate author="Daem Pasha" date={1659562791} />
         <h1 className="my-2 text-2xl">{title}</h1>
         <span className="text-lg text-justify text-gray-600">

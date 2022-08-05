@@ -19,8 +19,8 @@ const Home: NextPage = () => {
 
       <Navbar />
       <main>
-        <div className="p-5 bg-primary bg-opacity-5">
-          <div className="mx-auto max-w-7xl">
+        <div className="p-5 bg-primary bg-opacity-5 ">
+          <div className="mx-auto max-w-7xl px-10">
             <div className="uppercase text-gray-700 text-sm mb-5 tracking-wider ">
               Featured Post
             </div>
@@ -31,34 +31,43 @@ const Home: NextPage = () => {
               image="/python.jpg"
               author="Daem Pasha"
               date={1659641781}
-
             />
           </div>
         </div>
 
-        <div className="flex">
-          <PostCard 
+        <div className="flex mx-auto max-w-7xl flex-wrap gap-x-40">
+          <PostCard
             title={"Useful tips and tricks in Python"}
             description="Whether your new to Python or an experienced veteran, this article
             will contain some tips and tricks for everyone..."
             image="/python.jpg"
             author="Daem Pasha"
-            date={1659641781} />
-                   <PostCard 
+            date={1659641781}
+          />
+          <PostCard
             title={"Useful tips and tricks in Python"}
             description="Whether your new to Python or an experienced veteran, this article
             will contain some tips and tricks for everyone..."
             image="/python.jpg"
             author="Daem Pasha"
-            date={1659641781} />   
-                      <PostCard 
+            date={1659641781}
+          />
+          <PostCard
             title={"Useful tips and tricks in Python"}
             description="Whether your new to Python or an experienced veteran, this article
             will contain some tips and tricks for everyone..."
             image="/python.jpg"
             author="Daem Pasha"
-            date={1659641781} />
-            
+            date={1659641781}
+          />
+          <PostCard
+            title={"Useful tips and tricks in Python"}
+            description="Whether your new to Python or an experienced veteran, this article
+            will contain some tips and tricks for everyone..."
+            image="/python.jpg"
+            author="Daem Pasha"
+            date={1659641781}
+          />
         </div>
       </main>
       <Footer />
