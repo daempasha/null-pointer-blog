@@ -1,14 +1,20 @@
-import type { NextPage } from "next";
+import type { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import client from "../client";
 import { AuthorDate } from "../components/AuthorDate/authordate.component";
 import { FeaturedPost } from "../components/FeaturedPost/featuredpost.component";
 import { Footer } from "../components/Footer/footer.component";
 import { Navbar } from "../components/Navbar/navbar.component";
 import { PostCard } from "../components/PostCard/postcard.component";
+import groq from "groq";
 
-const Home: NextPage = () => {
+export interface iFeaturedPostQuery {
+  featuredPost: {};
+}
+
+const Home: NextPage = (featuredPost) => {
   return (
     <div>
       <Head>
@@ -24,14 +30,7 @@ const Home: NextPage = () => {
             <div className="uppercase text-gray-700 text-sm mb-5 tracking-wider ">
               Featured Post
             </div>
-            <FeaturedPost
-              title={"Useful tips and tricks in Python"}
-              description="Whether your new to Python or an experienced veteran, this article
-              will contain some tips and tricks for everyone..."
-              image="/python.jpg"
-              author="Daem Pasha"
-              date={1659641781}
-            />
+            <FeaturedPost {...featuredPost} />
           </div>
         </div>
 
@@ -73,6 +72,24 @@ const Home: NextPage = () => {
       <Footer />
     </div>
   );
+};
+
+export const getStaticProps: GetStaticProps = async () => {
+  const featuredPost = await client.fetch(
+    groq`*[_type=="post" && featuredPost == true] | order(publishedAt){
+      author->,
+      "slug": slug.current,
+      "imageUrl": mainImage.asset->url,
+      description,
+      publishedAt
+    }[0]`
+  );
+
+  return {
+    props: {
+      featuredPost,
+    },
+  };
 };
 
 export default Home;
