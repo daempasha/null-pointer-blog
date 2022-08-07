@@ -14,7 +14,6 @@ export interface iPost {
 }
 
 export interface iFeaturedPostApi {
-  featuredPost?: {
     author: {
       name: string;
     };
@@ -23,15 +22,11 @@ export interface iFeaturedPostApi {
     publishedAt: string;
     slug: string;
     imageUrl?: string;
-  };
 }
 
-export const FeaturedPost = ({ featuredPost }: iFeaturedPostApi) => {
-  if (featuredPost) {
-    const { author, title, description, publishedAt, slug, imageUrl } =
-      featuredPost!;
+export const FeaturedPost = ({ author, title, description, publishedAt, slug, imageUrl }: iFeaturedPostApi) => {
+  if (slug) {
 
-    console.log(featuredPost);
     return (
       <div className="flex flex-col md:flex-row">
         {imageUrl && (

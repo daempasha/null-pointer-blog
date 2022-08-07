@@ -10,11 +10,14 @@ import { Navbar } from "../components/Navbar/navbar.component";
 import { PostCard } from "../components/PostCard/postcard.component";
 import groq from "groq";
 
-export interface iFeaturedPostQuery {
-  featuredPost: {};
+interface iParams {
+  allPosts?: any[],
+  featuredPost?: any;
 }
 
-const Home: NextPage = (featuredPost) => {
+const Home: NextPage = (props) => {
+  const { allPosts, featuredPost}: iParams = props;
+  console.log(allPosts)
   return (
     <div>
       <Head>
@@ -85,9 +88,20 @@ export const getStaticProps: GetStaticProps = async () => {
     }[0]`
   );
 
+  const allPosts = await client.fetch(
+    groq`*[_type=="post" && featuredPost == false] | order(publishedAt){
+      author->,
+      "slug": slug.current,
+      "imageUrl": mainImage.asset->url,
+      description,
+      publishedAt
+    }`
+  ) 
+
   return {
     props: {
       featuredPost,
+      allPosts
     },
   };
 };
