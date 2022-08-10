@@ -4,20 +4,23 @@ import Image from "next/image";
 import Link from "next/link";
 import client from "../client";
 import { AuthorDate } from "../components/AuthorDate/authordate.component";
-import { FeaturedPost } from "../components/FeaturedPost/featuredpost.component";
+import {
+  FeaturedPost,
+  iPost,
+} from "../components/FeaturedPost/featuredpost.component";
 import { Footer } from "../components/Footer/footer.component";
 import { Navbar } from "../components/Navbar/navbar.component";
 import { PostCard } from "../components/PostCard/postcard.component";
 import groq from "groq";
+import Post from "./post/[slug]";
 
 interface iParams {
-  allPosts?: any[],
+  allPosts?: any[];
   featuredPost?: any;
 }
 
 const Home: NextPage = (props) => {
-  const { allPosts, featuredPost}: iParams = props;
-  console.log(allPosts)
+  const { allPosts, featuredPost }: iParams = props;
   return (
     <div>
       <Head>
@@ -38,38 +41,9 @@ const Home: NextPage = (props) => {
         </div>
 
         <div className="flex mx-auto max-w-7xl flex-wrap gap-x-40">
-          <PostCard
-            title={"Useful tips and tricks in Python"}
-            description="Whether your new to Python or an experienced veteran, this article
-            will contain some tips and tricks for everyone..."
-            image="/python.jpg"
-            author="Daem Pasha"
-            date={1659641781}
-          />
-          <PostCard
-            title={"Useful tips and tricks in Python"}
-            description="Whether your new to Python or an experienced veteran, this article
-            will contain some tips and tricks for everyone..."
-            image="/python.jpg"
-            author="Daem Pasha"
-            date={1659641781}
-          />
-          <PostCard
-            title={"Useful tips and tricks in Python"}
-            description="Whether your new to Python or an experienced veteran, this article
-            will contain some tips and tricks for everyone..."
-            image="/python.jpg"
-            author="Daem Pasha"
-            date={1659641781}
-          />
-          <PostCard
-            title={"Useful tips and tricks in Python"}
-            description="Whether your new to Python or an experienced veteran, this article
-            will contain some tips and tricks for everyone..."
-            image="/python.jpg"
-            author="Daem Pasha"
-            date={1659641781}
-          />
+          {allPosts?.map((allPost: iPost) => (
+            <PostCard {...allPost} />
+          ))}
         </div>
       </main>
       <Footer />
@@ -96,12 +70,12 @@ export const getStaticProps: GetStaticProps = async () => {
       description,
       publishedAt
     }`
-  ) 
+  );
 
   return {
     props: {
       featuredPost,
-      allPosts
+      allPosts,
     },
   };
 };

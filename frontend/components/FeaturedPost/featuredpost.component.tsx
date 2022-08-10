@@ -4,29 +4,36 @@ import { AuthorDate } from "../AuthorDate/authordate.component";
 import sanityClient from "../../client";
 
 export interface iPost {
-  title?: string;
-  description?: string;
-  image?: string;
-  height?: string;
-  width?: string;
-  author?: string;
-  date?: number;
+  author: {
+    name: string;
+  };
+  description: string;
+  title: string;
+  publishedAt: string;
+  slug: string;
+  imageUrl?: string;
 }
 
 export interface iFeaturedPostApi {
-    author: {
-      name: string;
-    };
-    description: string;
-    title: string;
-    publishedAt: string;
-    slug: string;
-    imageUrl?: string;
+  author: {
+    name: string;
+  };
+  description: string;
+  title: string;
+  publishedAt: string;
+  slug: string;
+  imageUrl?: string;
 }
 
-export const FeaturedPost = ({ author, title, description, publishedAt, slug, imageUrl }: iFeaturedPostApi) => {
+export const FeaturedPost = ({
+  author,
+  title,
+  description,
+  publishedAt,
+  slug,
+  imageUrl,
+}: iFeaturedPostApi) => {
   if (slug) {
-
     return (
       <div className="flex flex-col md:flex-row">
         {imageUrl && (
