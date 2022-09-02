@@ -3,6 +3,11 @@ import Link from "next/link";
 import { AuthorDate } from "../AuthorDate/authordate.component";
 import { iPost } from "../FeaturedPost/featuredpost.component";
 
+type iPostCard = iPost & {
+  height?: string;
+  width?: string;
+};
+
 export const PostCard = ({
   imageUrl,
   slug,
@@ -12,7 +17,9 @@ export const PostCard = ({
   description,
   author,
   publishedAt,
-}: iPost) => (
+  slug,
+  imageUrl,
+}: iPostCard) => (
   <div className="p-10 w-[500px] mx-auto md:mx-0">
     <Link href={`/post/${slug}`}>
       <a>

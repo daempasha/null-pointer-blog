@@ -8,14 +8,14 @@ export interface iAuthor {
 }
 
 export interface iPost {
-  slug?: string;
-  title?: string;
-  description?: string;
+  author: {
+    name: string;
+  };
+  description: string;
+  title: string;
+  publishedAt: string;
+  slug: string;
   imageUrl?: string;
-  height?: string;
-  width?: string;
-  author?: iAuthor;
-  publishedAt?: string;
 }
 
 export interface iFeaturedPostApi {

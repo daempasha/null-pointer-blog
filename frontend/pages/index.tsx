@@ -4,11 +4,15 @@ import Image from "next/image";
 import Link from "next/link";
 import client from "../client";
 import { AuthorDate } from "../components/AuthorDate/authordate.component";
-import { FeaturedPost } from "../components/FeaturedPost/featuredpost.component";
+import {
+  FeaturedPost,
+  iPost,
+} from "../components/FeaturedPost/featuredpost.component";
 import { Footer } from "../components/Footer/footer.component";
 import { Navbar } from "../components/Navbar/navbar.component";
 import { PostCard } from "../components/PostCard/postcard.component";
 import groq from "groq";
+import Post from "./post/[slug]";
 
 interface iParams {
   allPosts?: any[];
