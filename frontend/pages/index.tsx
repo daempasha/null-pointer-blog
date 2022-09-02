@@ -11,13 +11,11 @@ import { PostCard } from "../components/PostCard/postcard.component";
 import groq from "groq";
 
 interface iParams {
-  allPosts?: any[],
+  allPosts?: any[];
   featuredPost?: any;
 }
 
-const Home: NextPage = (props) => {
-  const { allPosts, featuredPost}: iParams = props;
-  console.log(allPosts)
+const Home: NextPage = ({ allPosts, featuredPost }: iParams) => {
   return (
     <div>
       <Head>
@@ -38,38 +36,9 @@ const Home: NextPage = (props) => {
         </div>
 
         <div className="flex mx-auto max-w-7xl flex-wrap gap-x-40">
-          <PostCard
-            title={"Useful tips and tricks in Python"}
-            description="Whether your new to Python or an experienced veteran, this article
-            will contain some tips and tricks for everyone..."
-            image="/python.jpg"
-            author="Daem Pasha"
-            date={1659641781}
-          />
-          <PostCard
-            title={"Useful tips and tricks in Python"}
-            description="Whether your new to Python or an experienced veteran, this article
-            will contain some tips and tricks for everyone..."
-            image="/python.jpg"
-            author="Daem Pasha"
-            date={1659641781}
-          />
-          <PostCard
-            title={"Useful tips and tricks in Python"}
-            description="Whether your new to Python or an experienced veteran, this article
-            will contain some tips and tricks for everyone..."
-            image="/python.jpg"
-            author="Daem Pasha"
-            date={1659641781}
-          />
-          <PostCard
-            title={"Useful tips and tricks in Python"}
-            description="Whether your new to Python or an experienced veteran, this article
-            will contain some tips and tricks for everyone..."
-            image="/python.jpg"
-            author="Daem Pasha"
-            date={1659641781}
-          />
+          {allPosts?.map((post) => (
+            <PostCard {...post} />
+          ))}
         </div>
       </main>
       <Footer />
@@ -80,6 +49,7 @@ const Home: NextPage = (props) => {
 export const getStaticProps: GetStaticProps = async () => {
   const featuredPost = await client.fetch(
     groq`*[_type=="post" && featuredPost == true] | order(publishedAt){
+      title,
       author->,
       "slug": slug.current,
       "imageUrl": mainImage.asset->url,
@@ -90,18 +60,19 @@ export const getStaticProps: GetStaticProps = async () => {
 
   const allPosts = await client.fetch(
     groq`*[_type=="post" && featuredPost == false] | order(publishedAt){
+      title,
       author->,
       "slug": slug.current,
       "imageUrl": mainImage.asset->url,
       description,
       publishedAt
     }`
-  ) 
+  );
 
   return {
     props: {
       featuredPost,
-      allPosts
+      allPosts,
     },
   };
 };

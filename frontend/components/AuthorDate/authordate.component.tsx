@@ -2,7 +2,7 @@ import moment from "moment";
 
 interface iAuthorDate {
   author: string;
-  date: string;
+  date: number;
 }
 
 export const AuthorDate = ({ author, date }: iAuthorDate) => (

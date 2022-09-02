@@ -3,42 +3,59 @@ import Link from "next/link";
 import { AuthorDate } from "../AuthorDate/authordate.component";
 import sanityClient from "../../client";
 
+export interface iAuthor {
+  name: string;
+}
+
 export interface iPost {
+  slug?: string;
   title?: string;
   description?: string;
-  image?: string;
+  imageUrl?: string;
   height?: string;
   width?: string;
-  author?: string;
-  date?: number;
+  author?: iAuthor;
+  publishedAt?: string;
 }
 
 export interface iFeaturedPostApi {
-    author: {
-      name: string;
-    };
-    description: string;
-    title: string;
-    publishedAt: string;
-    slug: string;
-    imageUrl?: string;
+  author: {
+    name: string;
+  };
+  description: string;
+  title: string;
+  publishedAt: number;
+  slug: string;
+  imageUrl?: string;
+  height?: string;
+  width?: string;
 }
 
-export const FeaturedPost = ({ author, title, description, publishedAt, slug, imageUrl }: iFeaturedPostApi) => {
+export const FeaturedPost = ({
+  author,
+  title,
+  description,
+  publishedAt,
+  slug,
+  imageUrl,
+  width = "400",
+  height = "250",
+}: iFeaturedPostApi) => {
   if (slug) {
-
     return (
       <div className="flex flex-col md:flex-row">
-        {imageUrl && (
-          <Link href={`/post/${slug}`}>
+        <Link href={`/post/${slug}`}>
+          <a>
             <Image
               className="rounded-md hover:opacity-60 hover:cursor-pointer transition-all "
-              src={imageUrl}
-              height={"250px"}
-              width={"400px"}
+              src={
+                imageUrl ? imageUrl : `https://picsum.photos/${width}/${height}`
+              }
+              height={height}
+              width={width}
             />
-          </Link>
-        )}
+          </a>
+        </Link>
         <div className="mt-2 md:mt-0 ml-0 md:ml-32 max-w-prose">
           <AuthorDate author={author.name} date={publishedAt} />
           <h1 className="my-2 text-2xl">{title}</h1>
