@@ -9,8 +9,6 @@ type iPostCard = iPost & {
 };
 
 export const PostCard = ({
-  imageUrl,
-  slug,
   height = "250",
   width = "400",
   title,
