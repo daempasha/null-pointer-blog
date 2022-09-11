@@ -30,7 +30,8 @@ export const PostCard = ({
       </a>
     </Link>
 
-    <h1 className="text-xl">{title}</h1>
+
+    <h1 className="text-xl mb-1">{title}</h1>
     {author && publishedAt && (
       <AuthorDate author={author.name} date={publishedAt} />
     )}

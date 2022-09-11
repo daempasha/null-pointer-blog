@@ -13,23 +13,14 @@ export interface iPost {
   };
   description: string;
   title: string;
-  publishedAt: string;
-  slug: string;
-  imageUrl?: string;
-}
-
-export interface iFeaturedPostApi {
-  author: {
-    name: string;
-  };
-  description: string;
-  title: string;
+  categories: string[];
   publishedAt: number;
   slug: string;
   imageUrl?: string;
   height?: string;
   width?: string;
 }
+
 
 export const FeaturedPost = ({
   author,
@@ -40,7 +31,7 @@ export const FeaturedPost = ({
   imageUrl,
   width = "400",
   height = "250",
-}: iFeaturedPostApi) => {
+}: iPost) => {
   if (slug) {
     return (
       <div className="flex flex-col md:flex-row">
@@ -57,8 +48,11 @@ export const FeaturedPost = ({
           </a>
         </Link>
         <div className="mt-2 md:mt-0 ml-0 md:ml-32 max-w-prose">
-          <AuthorDate author={author.name} date={publishedAt} />
-          <h1 className="my-2 text-2xl">{title}</h1>
+          <h1 className="text-2xl">{title}</h1>
+          <div className="my-1">
+            <AuthorDate author={author.name} date={publishedAt} />
+
+          </div>
           <span className="text-lg text-justify text-gray-600">
             {description}
           </span>

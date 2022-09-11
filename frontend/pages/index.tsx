@@ -58,7 +58,11 @@ export const getStaticProps: GetStaticProps = async () => {
       "slug": slug.current,
       "imageUrl": mainImage.asset->url,
       description,
-      publishedAt
+      publishedAt,
+      categories[] -> {
+        title,
+        slug
+      }
     }[0]`
   );
 
@@ -69,7 +73,11 @@ export const getStaticProps: GetStaticProps = async () => {
       "slug": slug.current,
       "imageUrl": mainImage.asset->url,
       description,
-      publishedAt
+      publishedAt,
+      categories[] -> {
+        title,
+        slug
+      }
     }`
   );
 
