@@ -31,13 +31,13 @@ export const PostCard = ({
     </Link>
 
 
-    <h1 className="text-xl mb-1 mt-2">{title}</h1>
+    <h1 className="text-xl mb-1 mt-2 dark:text-white">{title}</h1>
     {author && publishedAt && (
       <AuthorDate author={author.name} date={publishedAt} />
     )}
-    <span className="text-lg text-justify text-gray-600">{description}</span>
+    <span className="text-lg text-justify text-gray-600 dark:text-gray-300">{description}</span>
     <Link href={`/post/${slug}`}>
-      <a className="mx-2 whitespace-nowrap text-blue-600 text-sm font-bold">
+      <a className="mx-2 whitespace-nowrap text-blue-600 dark:text-blue-500 text-sm font-bold">
         Read more
       </a>
     </Link>

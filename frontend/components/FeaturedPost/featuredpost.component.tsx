@@ -53,11 +53,11 @@ export const FeaturedPost = ({
             <AuthorDate author={author.name} date={publishedAt} />
 
           </div>
-          <span className="text-lg text-justify text-gray-600">
+          <span className="text-lg text-justify text-gray-600 dark:text-gray-300">
             {description}
           </span>
           <Link href={`/post/${slug}`}>
-            <a className="mx-2 whitespace-nowrap text-blue-600 font-bold">
+            <a className="mx-2 whitespace-nowrap text-blue-600 dark:text-blue-500 font-bold">
               Read more
             </a>
           </Link>
@@ -68,7 +68,7 @@ export const FeaturedPost = ({
 
   return (
     <div className="flex flex-col md:flex-row">
-      <div className=" bg-gray-300 rounded-md animate-pulse block w-[400px] h-[250px] mr-5"></div>
+      <div className=" bg-gray-300 dark:bg-gray-800 rounded-md animate-pulse block w-[400px] h-[250px] mr-5"></div>
 
       <div className="flex flex-col gap-2">
         <div className=" bg-gray-300 animate-pulse block w-[400px] h-[20px]"></div>

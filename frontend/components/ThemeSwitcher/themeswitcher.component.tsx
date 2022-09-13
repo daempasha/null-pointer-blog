@@ -11,14 +11,14 @@ const ThemeSwitcher = () => {
         <div className="flex items-center text-gray-800">
 
             <button onClick={() => setTheme("light")}>
-                <span className={`flex items-center cursor-pointer py-1 px-3 rounded-md rounded-r-none ${theme === "light" ? "bg-gray-300" : "bg-gray-100 hover:bg-gray-200"}`}>
+                <span className={`flex items-center cursor-pointer py-1 px-3 rounded-md rounded-r-none dark:text-gray-200 dark:hover:bg-gray-600 ${theme === "light" ? "bg-gray-300" : "bg-gray-700 hover:bg-gray-200"}`}>
                     <FaSun size="20px" className="mr-1 text-yellow-600" />
                     Light
                 </span>
             </button>
 
             <button onClick={() => setTheme("dark")}>
-                <span className={`flex items-center cursor-pointer py-1 px-3 rounded-md rounded-l-none ${theme === "dark" ? "bg-gray-300" : "bg-gray-100 hover:bg-gray-200"}`}>
+                <span className={`flex items-center cursor-pointer py-1 px-3 rounded-md rounded-l-none dark:text-gray-200  ${theme === "dark" ? "bg-gray-800 dark:hover:bg-gray-800" : "bg-gray-100 hover:bg-gray-200 dark:hover:bg-gray-900"}`}>
                     <FaMoon size="20px" className="mr-1 text-gray-500" />
                     Dark
                 </span>
