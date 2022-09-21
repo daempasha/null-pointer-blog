@@ -48,8 +48,8 @@ export const Footer = () => {
           <a
             href="https://github.com/daempasha"
             className="text-blue-600 dark:text-blue-500 font-bold ml-1"
-            target="_blank"
             rel="noreferrer"
+            target="_blank"
           >
             Daem Pasha
           </a>

@@ -42,7 +42,7 @@ const Home: NextPage = ({ allPosts, featuredPost }: iParams) => {
         <div className="dark:bg-gray-900 flex-grow">
           <div className="flex mx-auto max-w-7xl flex-wrap gap-x-40">
             {allPosts?.map((post) => (
-              <PostCard key={post.name} {...post} />
+              <PostCard key={post.title} {...post} />
 
             ))}
           </div>
