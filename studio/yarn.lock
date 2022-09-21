@@ -1309,6 +1309,11 @@
     "get-random-values" "^1.2.2"
     "lodash" "^4.17.15"
 
+"@sanity/cli@^2.33.3":
+  "integrity" "sha512-lgKsYRBqO/KAKhyPFTMVDHkrCIfbfPo16tjOyygjHrvKeLXm6Y2e+udUTPAsOr9JS1mvZZ/yOK9A4+OUgip/ow=="
+  "resolved" "https://registry.npmjs.org/@sanity/cli/-/cli-2.33.3.tgz"
+  "version" "2.33.3"
+
 "@sanity/client@^3.2.0":
   "integrity" "sha512-M89v/KcNob0tnoMCW2caSnwYhSSqO1j5XuDXCloe966ZRFUAZWe9EVyyvvP7x1vPff5xR9PKxidrcx95l221mg=="
   "resolved" "https://registry.npmjs.org/@sanity/client/-/client-3.3.2.tgz"
