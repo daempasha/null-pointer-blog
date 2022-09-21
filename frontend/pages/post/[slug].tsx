@@ -68,7 +68,7 @@ const Post = ({ title, imageUrl, author, publishedAt, height = "500", width = "8
             />
             <div className=" my-5  text-sm text-gray-600 dark:text-gray-400 ">{description}</div>
             <div className="text-gray-700 dark:text-gray-300">
-              <PortableText value={body} components={components} />,
+              <PortableText value={body} components={components} />
             </div>
           </div>
 
