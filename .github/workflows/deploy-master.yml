@@ -8,6 +8,7 @@ on:
       - master
 jobs:
   Test-Application:
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [12, 14, 16, 18]
