@@ -17,11 +17,11 @@ jobs:
         with:
           node-version: ${{matrix.node_version}}
       - name: Install packages
-        uses: npm install ci
+        run: npm install ci
       - name: Build 
-        uses: npm run build --if-present
+        run: npm run build --if-present
       - name: Test
-        uses: npm run test
+        run: npm run test
 
   Deploy-Production:
     runs-on: ubuntu-latest
