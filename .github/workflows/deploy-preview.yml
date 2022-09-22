@@ -14,7 +14,7 @@ jobs:
         node-version: [12, 14, 16, 18]
     defaults:
       run:
-        working-directory: ./frontend
+        working-directory: /frontend
     steps:
       - name: Use Node.js ${{matrix.node-version}}
         uses: actions/setup-node@v2
