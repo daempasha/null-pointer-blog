@@ -9,7 +9,7 @@ it("shows name and date", () => {
     const dateFormat = "D MMM YYYY";
 
     const { container } = render(<AuthorDate author={author} date={date} />)
-    
+
     expect(screen.getByText(author)).toBeInTheDocument();
     expect(screen.getByText(moment(date).format(dateFormat))).toBeInTheDocument();
 
