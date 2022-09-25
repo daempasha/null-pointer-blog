@@ -9,7 +9,7 @@ jobs:
           path: "~/project"
       - run:
           name: Update NPM
-          command: "sudo npm install"
+          command: "sudo npm ci"
       - run:
           name: Show directory
           command: ls
