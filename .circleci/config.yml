@@ -7,21 +7,21 @@ jobs:
      - checkout
      - run:
          paths: 
-          - ./frontend
+          - ~/frontend
          name: Update NPM
          command: "sudo npm install -g npm@5"
      - restore_cache:
          key: dependency-cache-{{ checksum "package-lock.json" }}
      - run:
          paths: 
-          - ./frontend
+          - ~/frontend
          name: Install Dependencies
          command: npm install
      - save_cache:
      
          key: dependency-cache-{{ checksum "package-lock.json" }}
          paths:
-           - ./frontend/node_modules
+           - ~/frontend/node_modules
      - run:
          name: Run tests
          command: npm run test
