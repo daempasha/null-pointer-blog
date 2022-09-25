@@ -7,7 +7,7 @@ jobs:
     - checkout
     
  build:
-   base_directory: ~/frontend
+   working_directory: ~/frontend
    docker:
      - image: circleci/node:10.16.3
    steps:
