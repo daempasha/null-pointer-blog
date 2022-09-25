@@ -5,13 +5,16 @@ jobs:
     - image: circleci/node:10.16.3
   steps:
     - checkout
+    - run: 
+      name: Show directory
+      command: ls
     
  build:
    working_directory: ~/frontend
    docker:
      - image: circleci/node:10.16.3
    steps:
-     - run:
+     - run: 
          name: Update NPM
          command: "sudo npm install"
      - run:
