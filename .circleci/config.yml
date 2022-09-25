@@ -1,11 +1,18 @@
 version: 2.1
 jobs:
+  pull:
+    docker:
+      - image: circleci/node:10.16.3
+    steps:
+      - checkout
+      - run:
+          name: Show directory
+          command: ls
+
   build:
     working_directory: ~/frontend
     docker:
       - image: circleci/node:10.16.3
-    pre-steps:
-      - checkout
     steps:
       - run:
           name: Update NPM
@@ -25,3 +32,9 @@ jobs:
       - run:
           name: Run tests
           command: npm run test
+workflows:
+  version: 2
+  pull_and_build:
+    jobs:
+      - pull
+      - build
