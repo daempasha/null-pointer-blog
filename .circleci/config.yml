@@ -9,7 +9,7 @@ jobs:
           path: "~/project"
       - run:
           name: Update NPM
-          command: "sudo npm ci"
+          command: "sudo npm install -g npm"
       - restore_cache:
           key: dependency-cache-{{ checksum "package-lock.json" }}
       - run:
@@ -31,7 +31,7 @@ jobs:
           path: "~/project"
       - run:
           name: Update NPM
-          command: "sudo npm ci"
+          command: "sudo npm install -g npm"
       - restore_cache:
           key: dependency-cache-{{ checksum "package-lock.json" }}
       - run:
