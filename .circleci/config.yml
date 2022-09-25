@@ -5,8 +5,6 @@ jobs:
    docker:
      - image: circleci/node:10.16.3
    steps:
-     - checkout:
-       path: ~/frontend
      - run:
          name: Update NPM
          command: "sudo npm install"
