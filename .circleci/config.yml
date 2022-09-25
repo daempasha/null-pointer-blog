@@ -9,7 +9,7 @@ jobs:
          name: Update NPM
          command: "sudo npm install"
      - run:
-        name: Setup Environment Variables
+        name: Show directory
         command: ls
      - restore_cache:
          key: dependency-cache-{{ checksum "package-lock.json" }}
