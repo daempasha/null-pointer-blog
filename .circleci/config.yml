@@ -37,4 +37,6 @@ workflows:
   pull_and_build:
     jobs:
       - pull
-      - build
+      - build:
+          requires:
+            - pull
