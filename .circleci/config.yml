@@ -1,6 +1,6 @@
 version: 2.1
 jobs:
-  build:
+  build_and_test:
     working_directory: ~/project/frontend
     docker:
       - image: circleci/node:current
