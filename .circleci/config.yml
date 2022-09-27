@@ -66,6 +66,13 @@ jobs:
       - run:
           name: Build
           command: npm run build
+      - save_cache:
+          paths:
+            - ./build
+          key: app-build-cache-{{ .Branch }}
+      - run:
+          name: Deploy to Netlify
+          command: ./node_modules/.bin/netlify deploy --site $NETLIFY_SITE_ID --auth $NETLIFY_ACCESS_TOKEN --prod --dir=build
 
 workflows:
   version: 2
