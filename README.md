@@ -10,7 +10,7 @@ The aim of this project was to create a blog site that could easily be edited wi
 
 Another aim was to imitate a full design process from start to finish. I started by designing the application in Figma. Then I created the application in React and Sanity. After this, I created unit tests for the application. Finally, I used [CircleCI](https://circleci.com/) to create a CI/CD workflow that will lint, test and then deploy my application to Netlify.
 
-## Technology
+## Technologies
 ### Front-end
 - React
 - Next.js
@@ -25,3 +25,7 @@ Another aim was to imitate a full design process from start to finish. I started
 - CircleCi
 - Netlify
 - Figma
+
+## Figma
+_Click on the image below to view the Figma file_
+[<img src="https://user-images.githubusercontent.com/42499726/192887302-436d1323-73d7-4af5-a59e-a1b69ce0a34a.png">](https://www.figma.com/proto/8Cy3tE5M6lITCdOsdG8m9S/Coding-Blog?page-id=0%3A1&node-id=0%3A1&viewport=1644%2C-782%2C0.44&scaling=min-zoom&starting-point-node-id=237%3A14)
