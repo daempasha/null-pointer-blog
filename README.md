@@ -5,6 +5,8 @@
 
 _Null Pointer is a programming blog created using Sanity.io and Next.js_
 
+#
+
 ## Aim
 The aim of this project was to create a blog site that could easily be edited with a back-end CMS solution (Sanity.io), this will allow for addition, deletion and modifications to the production version without the need for re-deployment.
 
