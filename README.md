@@ -28,4 +28,12 @@ Another aim was to imitate a full design process from start to finish. I started
 
 ## Figma
 _Click on the image below to view the Figma file_
+
 [<img src="https://user-images.githubusercontent.com/42499726/192887302-436d1323-73d7-4af5-a59e-a1b69ce0a34a.png">](https://www.figma.com/proto/8Cy3tE5M6lITCdOsdG8m9S/Coding-Blog?page-id=0%3A1&node-id=0%3A1&viewport=1644%2C-782%2C0.44&scaling=min-zoom&starting-point-node-id=237%3A14)
+
+## CI/CD Pipeline 
+_Click on the image below to view the CircleCI pipeline_
+
+[<img src="https://user-images.githubusercontent.com/42499726/192889905-65e1d050-1adf-4242-9bad-4afd08902c24.png">](https://app.circleci.com/pipelines/github/daempasha/null-pointer-blog)
+
+
