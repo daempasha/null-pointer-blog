@@ -38,7 +38,7 @@ _Click on the image below to view the CircleCI pipeline_
 
 [<img src="https://user-images.githubusercontent.com/42499726/192889905-65e1d050-1adf-4242-9bad-4afd08902c24.png">](https://app.circleci.com/pipelines/github/daempasha/null-pointer-blog)
 
-# CMS
+## CMS
 Null Pointer uses a CMS as the back-end, this means all the content is fully editable and the changes will be reflected on the deployed front-end. This approach means a new build doesn't have to be created everytime a change is made to the posts.
 
 ![image](https://user-images.githubusercontent.com/42499726/193050678-cfaf16c4-3b36-4df8-b26a-a62fe08778ef.png)
